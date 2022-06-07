@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "u101",
+    "username": "EldadTuna",
+    "fullName": "Eldad Tishler",
+    "password": "AniEldad1995",
+    "imgUrl": "imgs/mini-user-imgs/u101.png",
+    "createdAt": 1613512143505
+  },
+  {
+    "_id": "u102",
+    "username": "YardenSha",
+    "fullName": "Yarden Shaul",
+    "password": "AniYarden1991",
+    "imgUrl": "imgs/mini-user-imgs/u102.png",
+    "createdAt": 1613512143505
+  },
+  {
+    "_id": "u103",
+    "username": "Elon5000",
+    "fullName": "Elon Barzani",
+    "password": "AniElon1997",
+    "imgUrl": "imgs/mini-user-imgs/u103.png",
+    "createdAt": 1613512143505
+  },
+  {
+    "_id": "u104",
+    "username": "OriBeSinai",
+    "fullName": "Ori Ben Amram",
+    "password": "AniOri1997",
+    "imgUrl": "imgs/mini-user-imgs/u104.png",
+    "createdAt": 1613512143505
+  },
+  {
+    "_id": "u104",
+    "username": "Guest",
+    "fullName": "Guest",
+    "password": "1234",
+    "imgUrl": "imgs/mini-user-imgs/u111.png",
+    "createdAt": 1613512143505
+  }
+]
