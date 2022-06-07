@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.b0d0f6e2.css",
-    "main.js": "/static/js/main.50b14c61.js",
+    "main.css": "/static/css/main.63f16558.css",
+    "main.js": "/static/js/main.0e2cea1b.js",
     "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/Rubik-Regular.ttf": "/static/media/Rubik-Regular.da39336cfcac7980f2f1.ttf",
     "service-worker.js": "/service-worker.js",
     "index.html": "/index.html",
-    "main.b0d0f6e2.css.map": "/static/css/main.b0d0f6e2.css.map",
-    "main.50b14c61.js.map": "/static/js/main.50b14c61.js.map"
+    "main.63f16558.css.map": "/static/css/main.63f16558.css.map",
+    "main.0e2cea1b.js.map": "/static/js/main.0e2cea1b.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0d0f6e2.css",
-    "static/js/main.50b14c61.js"
+    "static/css/main.63f16558.css",
+    "static/js/main.0e2cea1b.js"
   ]
 }
