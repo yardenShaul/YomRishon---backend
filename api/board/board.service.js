@@ -28,33 +28,59 @@ async function getById(boardId) {
 
 async function update(board) {
     try {
-        const boardToSave = {
-            _id: ObjectId(board._id),
-            title: board.title,
-            subtitle: board.subtitle,
-            cellTypes: board.cellTypes,
-            // isFavorite: board.isFavorite,
-            statusLabels: board.statusLabels,
-            members: board.members,
-            groups: board.groups,
-            colors: board.colors,
-            createdBy: board.createdBy,
-            createdAt: board.createdAt,
-            priorityLabels: board.priorityLabels,
-            activities: board.activities,
-            tags: board.tags,
-        }
-        const collection = await dbService.getCollection('boards')
-        await collection.updateOne(
-            { _id: boardToSave._id },
-            { $set: boardToSave }
-        )
-        return boardToSave
+      const boardToSave = {
+        _id: ObjectId(board._id),
+        title: board.title,
+        description: board.description,
+        isFavorite: board.isFavorite,
+        members: board.members,
+        groups: board.groups,
+        colors: board.colors,
+        createdBy: board.createdBy,
+        createdAt: board.createdAt,
+        activities: board.activities,
+        statuses: board.statuses,
+        priorities: board.priorities,
+        archivedAt: board.archivedAt,
+      }
+      const collection = await dbService.getCollection('boards')
+      await collection.updateOne({ _id: boardToSave._id }, { $set: boardToSave })
+      return boardToSave
     } catch (err) {
-        logger.error(`cannot update board ${board._id}`, err)
-        throw err
+      logger.error(`cannot update board ${board._id}`, err)
+      throw err
     }
 }
+
+// async function update(board) {
+//     try {
+//         const boardToSave = {
+//             _id: ObjectId(board._id),
+//             title: board.title,
+//             subtitle: board.subtitle,
+//             cellTypes: board.cellTypes,
+//             // isFavorite: board.isFavorite,
+//             statusLabels: board.statusLabels,
+//             members: board.members,
+//             groups: board.groups,
+//             colors: board.colors,
+//             createdBy: board.createdBy,
+//             createdAt: board.createdAt,
+//             priorityLabels: board.priorityLabels,
+//             activities: board.activities,
+//             tags: board.tags,
+//         }
+//         const collection = await dbService.getCollection('boards')
+//         await collection.updateOne(
+//             { _id: boardToSave._id },
+//             { $set: boardToSave }
+//         )
+//         return boardToSave
+//     } catch (err) {
+//         logger.error(`cannot update board ${board._id}`, err)
+//         throw err
+//     }
+// }
 
 async function add(currUser) {
     try {

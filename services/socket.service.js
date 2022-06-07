@@ -9,7 +9,8 @@ function setupSocketAPI(http) {
         }
     })
     gIo.on('connection', socket => {
-        logger.info(`New connected socket [id: ${socket.id}]`)
+        // logger.info(`New connected socket [id: ${socket.id}]`)
+        console.log('new socket',socket.id)
         socket.on('disconnect', socket => {
             logger.info(`Socket disconnected [id: ${socket.id}]`)
         })
@@ -22,12 +23,16 @@ function setupSocketAPI(http) {
             socket.join(topic)
             socket.myTopic = topic
         })
-        socket.on('chat-send-msg', msg => {
-            logger.info(`New chat msg from socket [id: ${socket.id}], emitting to topic ${socket.myTopic}`)
-            // emits to all sockets:
-            // gIo.emit('chat addMsg', msg)
-            // emits only to sockets in the same room
-            gIo.to(socket.myTopic).emit('chat-add-msg', msg)
+        socket.on('join-board', boardId => {
+            if(socket.myBoardId === boardId) return
+            if(socket.myBoardId) socket.leave(socket.myBoardId)
+            socket.join(boardId)
+            socket.myBoardId = boardId
+            
+        })
+        socket.on('board-change', updatedBoard => {
+            console.log('board changed!@', updatedBoard._id)
+            socket.broadcast.to(socket.myBoardId).emit('update-board', updatedBoard)
         })
         socket.on('user-watch', userId => {
             logger.info(`user-watch from socket [id: ${socket.id}], on user ${userId}`)
